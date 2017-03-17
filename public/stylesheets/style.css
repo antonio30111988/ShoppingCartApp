@@ -1,3 +1,4 @@
+
 .style{
 	background-color: #959e95;
 }
@@ -21,3 +22,13 @@
 }
 
 .signup{background-color:#f8f8f8;min-height: 400px}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+

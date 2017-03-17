@@ -33,10 +33,24 @@ app.set('view engine', '.hbs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //MIDDLEWARE
+
+var index = require('./routes/index');
+var users = require('./routes/users');
+
+var app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 //set session, random with some optional options
 app.use(session({secret:'salonasoftsessionset',resave:false,saveUninitialized:false}));
 //use flash
@@ -48,6 +62,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //initialized frontend main route file in folder ROUTES
 app.use('/', index);
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', index);
+app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

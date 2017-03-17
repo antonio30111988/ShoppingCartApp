@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 var Product=require('../models/product');
 var passport=require('passport');
 
@@ -45,6 +46,10 @@ router.post('/user/signup',
 
 router.get('/profile',function(req,res,next){
 	res.render('user/profile');
+});
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Shopping Cart' });
 });
 
 module.exports = router;
