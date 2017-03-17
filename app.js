@@ -23,7 +23,7 @@ var app = express();
 //connect to dtabase name pon port
 mongoose.connect('localhost:27017/node-shopping');
 //include passport config
-require('.config/passport');
+require('./config/passport');
 
 // view engine setup
 // set handle bars as default template engine

@@ -37,14 +37,14 @@ router.get('/user/signup',function(req,res,next){
 //npm install --save connect-flash -flash messages display
 router.post('/user/signup',
 	//call startegy by authenticate
-	passport.authenticate('local.signup'),{
-	successRedirect: '/profile',
-	failureRedirect: '/signup',
+	passport.authenticate('local.signup',{
+	successRedirect: '/user/profile',
+	failureRedirect: '/user/signup',
 	//use connect-flash package enabled
 	failureFlash: true
 }));
 
-router.get('/profile',function(req,res,next){
+router.get('/user/profile',function(req,res,next){
 	res.render('user/profile');
 });
 /* GET home page. */
