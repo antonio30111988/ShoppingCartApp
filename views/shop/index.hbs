@@ -1,0 +1,21 @@
+<!-- LOP TRHROUGH ARRAY OF OBJECTS AND ITS PTOPERTIES-->
+{{# each products}}
+	<div class="row">
+		{{# each this}}
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img src="{{this.imagePath}}" class="img-responsive" alt="Call of Duty">
+		      <div class="caption">
+		        <h3 class="product-title">{{this.title}}</h3>
+		        <p class="product-description">{{this.description}}</p>
+		        <div class="clearfix">
+		            <div class="product-price pull-left"><strong>{{this.price}} €</strong></div>
+		        	<a href="#" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+	  	{{/each}}
+	</div>
+{{/each}} 
+

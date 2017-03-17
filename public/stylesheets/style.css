@@ -1,0 +1,23 @@
+.style{
+	background-color: #959e95;
+}
+}
+.thumbnail img{
+	max-height:160px;
+}
+
+.thumbnail .product-description{
+	color:#959e95;
+}
+
+.thumbnail .product-title{
+	color:#99e699;
+}
+
+.product-price{
+	font-size:17px;
+	font-weight:bold;
+	color:#000;
+}
+
+.signup{background-color:#f8f8f8;min-height: 400px}
