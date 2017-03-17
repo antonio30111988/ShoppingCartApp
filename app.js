@@ -9,6 +9,7 @@ var mongoose=require('mongoose');
 var session=require('express-session');
 var passport=require('passport');
 var flash=require('connect-flash');
+var validator=require('express-validator'); 
 
 //multiple authh startegies for passport liempassport Auth ...
 //here we use passport local
@@ -49,6 +50,10 @@ app.set('view engine', '.hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+//order important: validator always goes after body parser init
+//receive paramezezr fro bosdy parser
+app.use(validator());
 app.use(cookieParser());
 
 //set session, random with some optional options

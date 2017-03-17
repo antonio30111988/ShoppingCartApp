@@ -28,7 +28,9 @@ router.get('/', function(req, res, next) {
 
 /*GET SIGN UP FORM*/
 router.get('/user/signup',function(req,res,next){
-	res.render('user/signup',{csrfToken:req.csrfToken()});
+	//errors stored in error
+	var messages=req.flash('error');
+	res.render('user/signup',{csrfToken:req.csrfToken(),messages:messages,hasErrors: messages.length>0});
 });
 
 //SIGNUP PACKAGES

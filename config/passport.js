@@ -23,6 +23,21 @@ passport.use('local.signup',new LocalStrategy({
 	//under inlcude req parameter to calllback function as first
 	passReqToCallback: true
 },function(req,email, password, done){
+	//validate request paarams
+	req.checkBody('email','Invalid email address').isEmail();
+	req.checkBody('password','Invalid password').notEmpty().isLength({min:4});
+
+	//assign and extract errors
+	var errors=req.validationErrors();
+	if(errors){
+		var messages=[];
+		errors.forEach(function(error){
+			messages.push(error.msg);
+		});
+			//registrate messages to error object
+		return done(null, false,req.flash('error',messages));
+	}	
+
 	User.findOne({'email':email},function(err,user){
 		if(err){
 			return done(err);
