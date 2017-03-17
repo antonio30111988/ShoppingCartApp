@@ -35,7 +35,7 @@ require('./config/passport');
 //MIDDLEWARE
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var userRoutes = require('./routes/user');
 
 var app = express();
 app.engine('.hbs',expressHbs({defaultLayout:'layout',extname:'.hbs'}));
